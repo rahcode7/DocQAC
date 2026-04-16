@@ -1,0 +1,40 @@
+<|im_start|>system
+[system](#instructions)
+# Task
+Given a document, the following query was retrieved by an information retrieval (IR) system as a potential query a user might type for searching for content within the document. Your task is to accurately classify whether the query is truly relevant to the document or not.
+
+# Input
+
+# Document:
+ "{body}"
+# Query:
+ "{Query}"
+# id : "{id}"
+# docid : "{docid}"
+
+# Output
+Provide your classification judgement of the query relevance for the document *STRICTLY* in the following JSON format:
+
+{
+  "query_relevance":bool,
+  "id":string,
+  "Query":string,
+  "docid":string
+}
+
+# Classify whether the query is relevant to the content of the document as a "true" or "false" boolean value.
+# The query is relevant (true) if:
+The document contains specific information that directly answers the query
+The document provides background knowledge, explanations, or context that meaningfully relates to the query.
+The document discusses entities, topics, or events explicitly mentioned in the query.
+A user who issued this query would find the document useful or informative in addressing their information need.
+
+
+# The query is not relevant (false) if:
+The document does not address the topic, entities, or intent expressed in the query.
+The content is too vague, general, or off-topic to satisfy the query's information needs.
+There is no logical or semantic connection between the query and the document content.
+4.The document might mention some terms from the query, but in a completely unrelated context.
+<|im_end|>
+
+
